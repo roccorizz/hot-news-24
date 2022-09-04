@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hot News24</title>
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css
+    ">
+    <!-- fontawesome -->
+    <script src="https://kit.fontawesome.com/f3a04868c8.js" crossorigin="anonymous"></script>
+    <!-- Custom Style -->
+    <style>
+        /* hover on news categories */
+        .hoover:hover {
+            background-color: lightblue;
+            color: blueviolet;
+            padding: 5px;
+            border-radius: 7px;
+        }
+
+        /* news details overflow */
+        .overflow {
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body class="container">
+    <!-- header -->
+    <header>
+        <!-- nav bar -->
+        <nav class="navbar navbar-expand-lg bg-light">
+            <div class="container-fluid">
+                <div>
+                    <a class="navbar-brand ms-5 me-5" href="#"><span
+                            class="bg-danger border rounded p-2 text-white">Hot</span>
+                        News24</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="blog.html">Blogs</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <hr>
+    </header>
+    <!-- main part -->
+    <main>
+        <section>
+            <!-- load news categories -->
+            <div id="newsCategories" class="d-flex flex-row mt-3 mb-3 justify-content-between flex-wrap p-1">
+            </div>
+
+            <!-- show total items for individual categorie -->
+            <input id="inputField" type="text" class="form-control mb-3">
+            <!-- short news by highest view -->
+            <div class="d-flex align-items-center">
+                <p class="pe-2">Sort By View:</p>
+                <p><select class="form-select form-select-sm" aria-label=".form-select-sm example" disabled>
+                        <option selected>Default</option>
+                    </select></p>
+            </div>
+            <!-- load individual categorie's all news -->
+            <div id="individualCategorie" class="card border border-0 container" data-bs-toggle="modal"
+                data-bs-target="#detailInfoModal">
+            </div>
+            <!-- load Spinner -->
+            <div id="loader" class="text-center d-none mt-3">
+                <div class="spinner-border text-primary" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+                <div class="spinner-border text-primary" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+
+                <div class="spinner-border text-warning" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+            </div>
+            <!-- Modal -->
+            <div class="modal fade" id="detailInfoModal" tabindex="-1" aria-labelledby="detailInfoModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-scrollable">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="detailInfoModalLabel"></h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div id="modalDetail" class="modal-body">
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js
+    "></script>
+    <script src="js/news.js"></script>
+</body>
+
+</html>
